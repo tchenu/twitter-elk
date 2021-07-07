@@ -16,9 +16,7 @@ const stream = twitter.stream('statuses/filter', {track: 'BTC'});
 stream.on('data', async function(event) {
     await elastic.index({
         index: 'tweets',
-        body: {
-          text: event.text
-        }
+        body: event
       })    
 });
 
