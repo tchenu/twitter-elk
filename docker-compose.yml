@@ -20,5 +20,13 @@ services:
       - "cluster.name=es-docker-cluster"
       - "discovery.type=single-node"
 
+  node:
+    image: node:latest
+    init: true
+    networks:
+      - internal
+    volumes:
+      - .:/app
+
 networks:
   internal:
