@@ -1,0 +1,26 @@
+{
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "terms": {
+            "text": [
+              "airdrop",
+              "giving",
+              "telegram",
+              "giveway",
+              "t.co",
+              "rt",
+              "follow"
+            ]
+          }
+        },
+        {
+          "wildcard": {
+            "text": "0x*"
+          }
+        }
+      ]
+    }
+  }
+}
